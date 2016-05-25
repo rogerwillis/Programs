@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Untitled Document</title>
+<style>
+main .panel-title > a, main .panel-title > a:hover {
+	background: #0086D2;
+	color: #fff;
+}
+main .panel-title > a {
+	font-family: "Tungsten 3r", "Tungsten A", "Tungsten B";
+	font-weight: 500;
+	font-size: 30px
+}
+main .panel-group .panel {
+	background: #f5f5f5;
+}
+main .panel-title > a.collapsed {
+	background: #003852;
+	color: #fff;
+}
+.panel-body ul {
+	list-style: inherit;
+	padding-left: 20px;
+}
+.panel-heading i.fa {
+	color: #fff;
+}
+.panel-title {
+	line-height: 45px;
+}
+.panel-title i.fa {
+	padding: 15px 6px 15px 21px;
+}
+.panel-heading .accordion-toggle:after {
+	/* symbol for "opening" panels */
+	font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+	content: "\2212";    /* adjust as needed, taken from bootstrap.css */
+	float: right;        /* adjust as needed */
+	color: white;         /* adjust as needed */
+	font-size: 18px;
+	padding-top: 10px;
+}
+.panel-heading .accordion-toggle.collapsed:after {
+	/* symbol for "collapsed" panels */
+	content: "\002b";    /* adjust as needed, taken from bootstrap.css */
+}
+.panel-body .title, .contentSlider .title {
+	font-size: 25px;
+	margin-bottom: 0;
+}
+.panel-body .sub-title, .contentSlider .sub-title {
+	color: #d50019;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+@media (max-width: 500px) {
+.hidden-xxs {
+	display: none;
+}
+}
+
+@media (min-width: 976px) {
+body {
+	display: none;
+}
+}
+
+
+ @media (max-width: @screen-xs-min) {
+ .modal-xs {
+width: @modal-sm;
+}
+}
+.img-circle {
+	border: 4px solid #5F5E5E;
+}
+main .panel-group .panel + .panel {
+	margin-top: 3px;
+}
+.row.map {
+	margin-bottom: 10px;
+}
+.text-red {
+	color: #d50019;
+}
+button.close {
+	font-size: 35px;
+}
+button.close {
+	opacity: 1 !important;
+}
+/*UTI SLIDER*/
+.contentSlider {
+	width: 100%;
+}
+.contentSlider, .contentSlider .rsOverflow, .contentSlider .rsSlide, .contentSlider .rsVideoFrameHolder, .contentSlider .rsThumbs {
+	background: #eee;
+	color: #000;
+}
+.contentSlider .rsSlide, .contentSlider .rsOverflow {
+	background: #fff;
+}
+.contentSlider h3 {
+	font-size: 24px;
+	line-height: 31px;
+	margin: 12px 0 8px;
+	font-weight: bold;
+}
+.contentSlider img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+.content-slider-bg {
+	width: 86%;
+	padding: 24px 7%;
+	background: #eee;
+}
+.contentSlider.rsMinW .rsBullets {
+	position: relative !important;
+	bottom: 20px;
+	right: 10px;
+}
+.royalSlider {
+	max-width: 100% !important;
+	height: 400px;
+	position: relative;
+	direction: ltr;
+}
+.contentSlider.rsMinW, .contentSlider.rsMinW .rsOverflow, .contentSlider.rsMinW .rsSlide, .contentSlider.rsMinW .rsVideoFrameHolder, .contentSlider.rsMinW .rsThumbs {
+	background: #fff;
+	color: #000;
+}
+.contentSlider.rsDefaultInv, .rsDefaultInv .rsOverflow, .contentSlider.rsDefaultInv .rsSlide, .contentSlider.rsDefaultInv .rsVideoFrameHolder, .contentSlider.rsDefaultInv .rsThumbs, .rsDefaultInv {
+	background: transparent !important;
+	color: #222;
+}
+.contentSlider.rsDefaultInv .rsBullets {
+	position: relative;
+	z-index: 35;
+	padding-top: 5px;
+	width: 100%;
+	height: auto;
+	margin: 0 auto;
+	text-align: center;
+	line-height: 27px;
+	overflow: hidden;
+}
+.contentSlider.rsDefaultInv .rsBullet {
+	width: 20px;
+	height: 5px;
+	display: inline-block;
+	padding: 6px;
+}
+.contentSlider.rsDefaultInv .rsBullet span {
+	width: 10px;
+	height: 10px;
+}
+/*.plus:after {
+    content: "\002b";
+}*/
+
+.plus-top-right:after {
+	font-family: 'Glyphicons Halflings';
+	content: "\002b";
+	color: white;
+	font-size: 18px;
+	padding-top: 0px;
+	top: 14px;
+	position: absolute;
+	right: 12px;
+}
+.blue-bg .close {
+	font-size: 32px !important;
+	color: #fff;
+}
+.fa.fa-5x {
+	font-size: 5em;
+}
+.fa.fa-6x {
+	font-size: 6em;
+}
+.fa.fa-7x {
+	font-size: 7em;
+}
+.bottom.affix {
+	bottom: 0;
+	top: inherit;
+}
+.container-fluid.bottom.affix {
+	width: 100%;
+}
+
+@media (max-width: 992px) {
+.container-fluid.bottom.affix {
+	position: fixed !important;
+}
+}
+
+
+.btn.btn-trans {
+    background: transparent;
+    color: #fff;
+    border-color: #fff;
+	    letter-spacing: 0.2em;
+}
+
+      #related-programs {
+  width: 100%;
+}
+
+
+#related-programs .rsContent {
+  color: #FFF;
+  font-size: 24px;
+  line-height: 32px;
+  float: left;
+}
+#related-programs .bContainer {
+    top: 24%;
+    width: 100%;
+	position: absolute;
+}
+
+#related-programs .rsABlock {
+  position: relative;
+  display: block;
+  left: auto;
+  top: auto;
+}
+#related-programs .blockHeadline {
+  font-size: 42px;
+  line-height: 50px;
+}
+#related-programs .blockSubHeadline {
+  font-size: 32px;
+  line-height: 40px
+}
+#related-programs .txtCent {
+  text-align: center; 
+  width: 100%; 
+}
+
+
+</style>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link href="custom.css" rel="stylesheet" type="text/css">
+<link href="mega-menu.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="assets/royalslider/royalslider.css">
+<link rel="stylesheet" type="text/css" href="assets/royalslider/skins/default-inverted/rs-default-inverted.css">
+<!-- Fonts -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="http://cloud.typography.com/7416432/788802/css/fonts.css" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic" rel="stylesheet">
+
+<!-- Icons/Glyphs --><!-- Favicon -->
+<link rel="apple-touch-icon" href="/content/uticorporate/images/touch-icon-iphone.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/content/uticorporate/images/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/content/uticorporate/images/apple-touch-icon-114x114.png" />
+
+<!--[if lt IE 9]><script src="~/content/uticorporate/js/html5shiv.js"></script><script src="~/content/uticorporate/js/respond.min.js"></script><![endif]-->
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+</head>
+<body>
+<div class="navbar mega-wide navbar-default navbar-static-top">
+  <div class="offcanvas-remove ">
+    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navbar-offcanvas" data-canvas="body"> <i class="fa fa-remove fa-2x"></i> </button>
+  </div>
+  <div class="navbar-header Red">
+    <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navbar-offcanvas" data-canvas="body"> <i class="fa fa-bars fa-2x"></i></button>
+    <div class="header-left"> <span class="navbar-brand pull-right hidden-sm hidden-xs "> <a href="http://www.uti.edu/home"> <img src="http://www.uti.edu/images/default-source/logos/utimainlogo.png?sfvrsn=10" title="Universal Technical Institute" alt="Universal Technical Institute" /> </a> </span> <span class="navbar-brand pull-right hidden-xl hidden-lg hidden-md ">
+      <div class='sfContentBlock'> <a href="/home"><img src="http://www.uti.edu/images/default-source/logos/uti-mobile.png?sfvrsn=2" data-displaymode="Original" alt="UTI" title="UTI Mobile" /></a><br />
+      </div>
+      </span> </div>
+  </div>
+  <div class="navbar-offcanvas offcanvas Red">
+    <ul class="nav navbar-nav Red">
+      <div class="search pull-right"> <a href="#search" data-toggle="modal" data-target="#modalSearch"><i class="fa fa-search" style="display: inline-block;"></i></a> </div>
+      <li class="dropdown"> <a href="/programs" class="dropdown-toggle" data-toggle="dropdown">programs <span>of STUDY <b class="caret"></b></span> </a>
+        <ul class="dropdown-menu">
+          <li><a href="/programs/automotive" class="">Automotive</a></li>
+          <li><a href="/programs/collision" class="">Collision Repair</a></li>
+          <li><a href="/programs/diesel" class="">Diesel</a></li>
+          <li><a href="/programs/marine" class="">Marine</a></li>
+          <li><a href="/programs/motorcycle" class="">Motorcycle</a></li>
+          <li><a href="/programs/nascar" class="">NASCAR</a></li>
+          <li><a href="/programs/cnc-machining" class="">CNC Machining</a></li>
+          <li><a href="/programs/welding" class="">Welding</a></li>
+        </ul>
+      </li>
+      <li class="dropdown mega-wide-full transition"> <a href="/partners" class="dropdown-toggle" data-toggle="dropdown">specialized <span>TRAINING<b class="caret"></b></span></a>
+        <ul class="dropdown-menu">
+          <div class="row">
+            <li class="col-md-3">
+              <ul>
+                <li class="nav-title"><a href="/programs/automotive">Automotive</a></li>
+                <li><a href="/partners/bmw" class="">BMW - FastTrack/STEP</a></li>
+                <li><a href="/partners/ford" class="">Ford - FACT</a></li>
+                <li><a href="/partners/gm" class="">GM Tech</a></li>
+                <li><a href="/partners/mercedes-benz" class="">Mercedes-Benz DRIVE and ELITE START</a></li>
+                <li><a href="/partners/mini" class="">MINI - STEP</a></li>
+                <li><a href="/programs/nascar" class="">NASCAR</a></li>
+                <li><a href="/partners/nissan" class="">Nissan - NATT</a></li>
+                <li><a href="/partners/porsche" class="">Porsche - PTAP</a></li>
+                <li><a href="/partners/toyota" class="">Toyota - TPAT</a></li>
+                <li><a href="/partners/volvo" class="">Volvo - SAFE</a></li>
+              </ul>
+            </li>
+            <li class="col-md-3">
+              <ul>
+                <li class="nav-title"><a href="/programs/diesel">Diesel</a></li>
+                <li><a href="/partners/cummins-engine" class="">Cummins - Diesel Engines</a></li>
+                <li><a href="/partners/cummins-power" class="">Cummins - Power Gen</a></li>
+                <li><a href="/partners/daimler-trucks" class="">Daimler Trucks North America - Finish First</a></li>
+                <li><a href="/partners/international" class="">International Trucks - ITEP</a></li>
+                <li><a href="/partners/peterbilt" class="">Peterbilt</a></li>
+              </ul>
+            </li>
+            <li class="col-md-2">
+              <ul>
+                <li class="nav-title"><a href="/programs/collision">Collision Repair </a></li>
+                <li><a href="/programs/collision" class="">3M</a></li>
+                <li><a href="/programs/collision" class="">Axalta</a></li>
+                <li><a href="/programs/collision" class="">Chief Automotive</a></li>
+                <li><a href="/programs/collision" class="">I-Car</a></li>
+              </ul>
+            </li>
+            <li class="col-md-2">
+              <ul>
+                <li class="nav-title"><a href="/programs/motorcycle">Motorcycle</a></li>
+                <li><a href="/partners/bmw-motorrad" class="">BMW Motorrad</a></li>
+                <li><a href="/partners/harley-davidson" class="">Harley-Davidson</a></li>
+                <li><a href="/partners/honda-motorcycle" class="">Honda - HonTech</a></li>
+                <li><a href="/partners/kawasaki" class="">Kawasaki - K-Tech</a></li>
+                <li><a href="/partners/suzuki-motorcycle" class="">Suzuki - FAST</a></li>
+                <li><a href="/partners/yamaha-motorcycle" class="">Yamaha - YAMAPRO</a></li>
+              </ul>
+            </li>
+            <li class="col-md-2">
+              <ul>
+                <li class="nav-title"><a href="/programs/marine">Marine</a></li>
+                <li><a href="/programs/marine" class="">Honda Marine</a></li>
+                <li><a href="/programs/marine" class="">Mercury Marine</a></li>
+                <li><a href="/programs/marine" class="">Suzuki Marine</a></li>
+                <li><a href="/programs/marine" class="">Volvo Penta</a></li>
+                <li><a href="/programs/marine" class="">Yamaha Marine</a></li>
+              </ul>
+            </li>
+          </div>
+          <!-- /.row for /.mega-wide-full -->
+        </ul>
+      </li>
+      <li class="dropdown"> <a href="/campus-locations" class="dropdown-toggle" data-toggle="dropdown">campus <span>LOCATIONS<b class="caret"></b></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/campus-locations/avondale-az" class="">Avondale, AZ</a></li>
+          <li><a href="/campus-locations/phoenix-az" class="">Phoenix, AZ (MMI)</a></li>
+          <li><a href="/campus-locations/longbeach-ca" class="">Long Beach, CA</a></li>
+          <li><a href="/campus-locations/rancho-cucamonga-ca" class="">Rancho Cucamonga, CA</a></li>
+          <li><a href="/campus-locations/sacramento-ca" class="">Sacramento, CA</a></li>
+          <li><a href="/campus-locations/orlando-fl-auto" class="">Orlando, FL</a></li>
+          <li><a href="/campus-locations/orlando-fl-marine">&nbsp;&nbsp;- MMI Marine</a></li>
+          <li><a href="/campus-locations/orlando-fl-motorcycle">&nbsp;&nbsp;- MMI Motorcycle</a></li>
+          <li><a href="/campus-locations/orlando-fl-auto">&nbsp;&nbsp;- UTI Auto &amp; Diesel</a></li>
+          <li><a href="/campus-locations/lisle-il" class="">Lisle, IL</a></li>
+          <li><a href="/campus-locations/norwood-ma" class="">Norwood, MA</a></li>
+          <li><a href="/campus-locations/mooresville-nc" class="">Mooresville, NC</a></li>
+          <li><a href="/campus-locations/exton-pa" class="">Exton, PA</a></li>
+          <li><a href="/campus-locations/dallas-tx" class="">Dallas/Fort Worth, TX</a></li>
+          <li><a href="/campus-locations/houston-tx" class="">Houston, TX</a></li>
+          <li class="divider"></li>
+          <li><a href="/events" class="hidden-xs hidden-sm">Campus Events</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"> <a href="/student-services" class="dropdown-toggle" data-toggle="dropdown">student <span>SERVICES<b class="caret"></b></span> </a>
+        <ul class="dropdown-menu">
+          <li><a href="/student-services/employment-services" class="">Employment Services</a></li>
+          <li><a href="/student-services/disability-services" class="">Disability Services</a></li>
+          <li><a href="/student-services/financial-aid" class="">Financial Aid</a></li>
+          <li><a href="/student-services/ged-assistance" class="">GED Assistance</a></li>
+          <li><a href="/student-services/housing" class="">Housing</a></li>
+          <li><a href="/student-services/scholarships" class="">Scholarships</a></li>
+          <li><a href="/student-services/tuition-estimator" class="">Tuition Estimator</a></li>
+          <li><a href="/student-services/military" class="">Military</a></li>
+          <li><a href="/catalogs" class="">Course Catalogs</a></li>
+          <li><a href="/student-services/1098-t-faq" class="">1098-T FAQ</a></li>
+          <li><a href="/student-services/rock-the-vote" class="">Voter Registration</a></li>
+        </ul>
+      </li>
+      <li class="dropdown"> <a href="/why-choose-uti" class="dropdown-toggle" data-toggle="dropdown">why choose <span> UTI?<b class="caret"></b></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/why-choose-uti/the-uti-advantage" class="">The UTI Advantage</a></li>
+          <li><a href="/why-choose-uti/why-become-a-technician" class="">Why Become A Technician</a></li>
+          <li><a href="/why-choose-uti/what-it-takes" class="">What It Takes</a></li>
+          <li><a href="/parents" class="">Parents</a></li>
+          <li><a href="/counselors" class="">Counselors</a></li>
+          <li><a href="/why-choose-uti/refer-a-friend" class="">Refer A Friend</a></li>
+          <li><a href="/employers" class="">Hire A Tech</a></li>
+        </ul>
+      </li>
+      <li class="mobile-search uti-search-mobile">
+        <div class="col-sm-12 ">
+          <div class="input-group">
+            <input type="search" class="form-control input-lg" placeholder="Search UTI" name="mainsearch">
+            <div class="input-group-btn">
+              <input name="search-index" type="hidden" value="search" />
+              <button type="submit" class="btn btn-primary bg-red no-margin"><i class="glyphicon glyphicon-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="header-right">
+    <div class="call-to-action">
+      <div class="col-sm-2"></div>
+      <div class="call-chat">
+        <div class="call col-sm-2 col-xs-3 col-xxs-3 text-right hidden-lg hidden-md"> <a href="tel:tel:18008347308" class="lpcall"> <img src="http://cdn.uti.edu/liveperson/caller.jpg" class="img-responsive img-fluid"> </a> </div>
+        <div class="chat col-sm-2 col-xs-3 col-xxs-3 hidden-lg hidden-md">
+          <div class="chat" id="lpchat"></div>
+        </div>
+      </div>
+      <div class="col-sm-4 col-md-12 col-xs-5 col-xxs-6">
+        <div class='sfContentBlock'><a href="/forms/form8" class="cta-button" title="Take the Next Step"><img id="cta-button" src="http://www.uti.edu/images/default-source/call-to-action-buttons/takenextstepblue.png?sfvrsn=4" data-displaymode="Original" alt="TakeNextStepBlue" title="TakeNextStepBlue" /></a> </div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-phone-box  hidden-sm hidden-xs">
+    <ul>
+      <li class="phone">
+        <div >
+          <div ><a href="tel:18008347308">800-834-7308</a></div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<main>
+<!-- Video -->
+  <div class="container-fluid black-bg">
+    <div class="container">
+      <div class="row no-top-padding no-bottom-padding text-center"> <img class="img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=55&txt=Video&w=1200&h=500" /> </div>
+    </div>
+  </div>
+  
+  <!-- Programs Overview -->
+  <section class="inner-top-xs inner-bottom-xs">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 style="color:#d50019;">MOTORCYCLE TECHNICIAN TRAINING PROGRAM</h1>
+            <div style="color:#d50019; font-size:14px; font-weight:bold; ">Open enrollment | 51 Weeks | 11 Locations</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum semper, nunc ut imperdiet dignissim, mauris tellus auctor augue, sit amet ullamcorper lacus dolor sit amet justo. Ut semper, odio non commodo pellentesque, metus diam aliquet dui, sit amet tincidunt sapien tortor eu urna. </p>
+            <p>Duis et turpis justo. Fusce eget pharetra erat. Sed a turpis turpis. Praesent sodales gravida lacus venenatis tempor. Aliquam suscipit id lorem eget eleifend. In malesuada tincidunt sodales. Aliquam a fermentum tortor, pharetra bibendum orci. </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 no-padding">
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading sticky" role="tab" id="headingOne">
+                  <h4 class="panel-title "><i class="fa fa-wrench fa-3x pull-left" aria-hidden="true"></i> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="accordion-toggle collapsed"> ENROLLMENT REQUIREMENTS </a> </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                    <ul>
+                      <li>Bullet 1</li>
+                      <li>Bullet 2</li>
+                      <li>Bullet 3</li>
+                      <li>Bullet 4</li>
+                      <li>Bullet 5</li>
+                      <li>Bullet 6</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                  <h4 class="panel-title"><i class="fa fa-wrench fa-3x pull-left" aria-hidden="true"></i> <a class="accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> PROGRAM COURSES </a> </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                  <div class="panel-body">
+                    <p><strong>Course 1</strong> you'll learn... </p>
+                    <p><strong>Course 2</strong> you'll learn... </p>
+                    <p><strong>Course 3</strong> you'll learn...</p>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                  <h4 class="panel-title"><i class="fa fa-wrench fa-3x pull-left" aria-hidden="true"></i> <a class="accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"> CERTIFICATIONS </a> </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div class="panel-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingFour">
+                  <h4 class="panel-title"><i class="fa fa-wrench fa-3x pull-left" aria-hidden="true"></i> <a class="accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour"> ADVANCED TRAINING </a> </h4>
+                </div>
+                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h5 class="title">MSAT NAME</h5>
+                        <div class="sub-title">Reserved enrollment | 12 weeks | 2 locations</div>
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-3 hidden-xxs text-center"><img src="https://placeholdit.imgix.net/~text?txtsize=25&txt=MSAT&w=150&h=150" alt="BMW MSAT" class="img-circle" /></div>
+                      <div class="col-md-9 col-sm-9 col-xs-9">You'll learn how to diagnose, maintain and repair domestic and foreign automobiles. You will also find out how to troubleshoot problems of all kinds, using the latest problems of all kinds, using the latest</div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h5 class="title">MSAT NAME</h5>
+                        <div class="sub-title">Reserved enrollment | 12 weeks | 2 locations</div>
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-3 hidden-xxs text-center"><img src="https://placeholdit.imgix.net/~text?txtsize=25&txt=MSAT&w=150&h=150" alt="BMW MSAT" class="img-circle" /></div>
+                      <div class="col-md-9 col-sm-9 col-xs-9">You'll learn how to diagnose, maintain and repair domestic and foreign automobiles. You will also find out how to troubleshoot problems of all kinds, using the latest problems of all kinds, using the latest</div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                      <div class="col-md-12">
+                        <h5 class="title">MSAT NAME</h5>
+                        <div class="sub-title">Reserved enrollment | 12 weeks | 2 locations</div>
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-3 hidden-xxs text-center"><img src="https://placeholdit.imgix.net/~text?txtsize=25&txt=MSAT&w=150&h=150" alt="BMW MSAT" class="img-circle" /></div>
+                      <div class="col-md-9 col-sm-9 col-xs-9">You'll learn how to diagnose, maintain and repair domestic and foreign automobiles. You will also find out how to troubleshoot problems of all kinds, using the latest problems of all kinds, using the latest</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingLocations">
+                  <h4 class="panel-title"><i class="fa fa-wrench fa-3x pull-left" aria-hidden="true"></i> <a class="accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseLocations" aria-expanded="false" aria-controls="collapseLocations"> LOCATIONS </a> </h4>
+                </div>
+                <div id="collapseLocations" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingLocations">
+                  <div class="panel-body no-padding">
+                    <div class="container-fluid text-center no-padding"> 
+                    <div class="col-md-12 no-padding"> 
+                   	 <img class="img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=55&txt=Map&w=778&h=380" alt="location" />
+                    </div>
+                    
+                    </div>
+                    <div class="container-fluid no-padding text-center blue-bg">
+                      <div class="container inner-top-xs inner-bottom-xs">
+                        <div class="row map">
+                          <div class="col-md-2 col-sm-2 col-xs-2 text-right"><i class="fa fa-2x fa-map-marker" aria-hidden="true"></i></div>
+                          <div class="col-md-8 col-sm-8 col-xs-8 text-left"><strong>UTI-Avondale, AZ</strong><br />
+                            10695 W. Pierce St, Avondale, AZ 85323</div>
+                        </div>
+                        <div class="row map">
+                          <div class="col-md-2 col-sm-2 col-xs-2 text-right"><i class="fa fa-2x fa-map-marker" aria-hidden="true"></i></div>
+                          <div class="col-md-8 col-sm-8 col-xs-8 text-left"><strong>UTI-Long Beach, CA</strong><br />
+                            10695 W. Pierce St, Avondale, AZ 85323</div>
+                        </div>
+                        <div class="row map">
+                          <div class="col-md-2 col-sm-2 col-xs-2 text-right"> <i class="fa fa-2x fa-map-marker" aria-hidden="true"></i> </div>
+                          <div class="col-md-8 col-sm-8 col-xs-8 text-left"> <strong>UTI-Sacramento, CA</strong><br />
+                            10695 W. Pierce St, Avondale, AZ 85323</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- GRADUATE SUCCESS STORIES-->
+  <section class="inner-bottom-xs inner-top-xs light-bg">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-red">GRADUATE SUCCESS STORIES</h1>
+            <div id="content-slider-1" class="royalSlider contentSlider rsDefaultInv"> 
+              <!-- slide -->
+              <div> <img class="rsImg img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Slide+1&w=600&h=350">
+                <h2 class="sub-section-title text-red">John Doe Smith</h2>
+                <p>This is dummy copy. It is not meant to be read. Accordingly, it is difficult to figure out when to end it. If this were real copy, it would have ended long ago. But then, this is dummy copy. It is not meant to be read. Period.</p>
+              </div>
+              <!-- slide -->
+              <div> <img class="rsImg img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Slide+2&w=500&h=350">
+                <h2 class="sub-section-title text-red">Bob Doley Smithers</h2>
+                <p>This is dummy copy. It is not meant to be read. Accordingly, it is difficult to figure out when to end it. If this were real copy, it would have ended long ago. But then, this is dummy copy. It is not meant to be read. Period.</p>
+              </div>
+              <!-- slide -->
+              <div> <img class="rsImg img-responsive" src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Slide+3&w=500&h=350">
+                <h2 class="sub-section-title text-red">Jane Doe Smith</h2>
+                <p>This is dummy copy. It is not meant to be read. Accordingly, it is difficult to figure out when to end it. If this were real copy, it would have ended long ago. But then, this is dummy copy. It is not meant to be read. Period.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Call to Action Bar -->
+  <div id="ctaBar"></div>
+  <div id="cta-bar" class="container-fluid no-left-padding no-right-padding blue-bg bottom">
+    
+      <div class="row no-right-margin">
+        <div class="col-sm-6 col-xs-6 col-xxs-6 text-right"> <a class="btn btn-trans btn-lg no-top-margin no-bottom-margin"> APPLY NOW </a> </div>
+        <div class="col-sm-6 col-xs-6 col-xxs-6"> <a class="btn btn-trans btn-lg no-top-margin no-bottom-margin"> CONTINUE </a> </div>
+      </div>
+
+  </div>
+  
+  <!-- Demand and Career Paths -->
+  <section class="inner-top-xs inner-bottom-xs">
+    <div class="container">
+      <div class>
+        <div class="col-md-12 no-padding">
+          <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="false">
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingDemand">
+                <h4 class="panel-title "><i class="fa fa-wrench fa-3x pull-left" aria-hidden="true"></i> <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseDemand" aria-expanded="false" aria-controls="collapseDemand" class="accordion-toggle collapsed"> DEMAND FOR TECHNICIANS </a> </h4>
+              </div>
+              <div id="collapseDemand" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body"> content here... </div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingPaths">
+                <h4 class="panel-title"><i class="fa fa-wrench fa-3x pull-left" aria-hidden="true"></i> <a class="accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapsePaths" aria-expanded="false" aria-controls="collapsePaths"> CAREER PATHS </a> </h4>
+              </div>
+              <div id="collapsePaths" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingPaths">
+                <div class="panel-body"> content here... </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Meet Our Instructors -->
+  <section class="inner-top-xs inner-bottom-xs light-bg">
+    <div class="container-fluid ">
+            <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-red">MEET OUR INSTRUCTORS</h1>
+            <div id="content-slider-meet-our-instructors" class="royalSlider contentSlider rsDefaultInv"> 
+              <!-- slide -->
+              <div> 
+
+                      <div class="col-md-12 no-left-padding">
+                        <h5 class="title">Rick Roll III</h5>
+                        <div class="sub-title text-red">CLASS | CAMPUS</div>
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-3 hidden-xxs text-center  no-left-padding "><img src="https://placeholdit.imgix.net/~text?txtsize=25&txt=MSAT&w=150&h=150" alt="BMW MSAT" class="img-circle " /></div>
+                      <div class="col-md-9 col-sm-9 col-xs-9">You'll learn how to diagnose, maintain and repair domestic and foreign automobiles. You will also find out how to troubleshoot problems of all kinds, using the latest problems of all kinds, using the latest</div>
+                    
+
+              </div>
+               <!-- slide -->
+              <div> 
+
+                      <div class="col-md-12 no-left-padding">
+                        <h5 class="title"></h5>
+                        <div class="sub-title text-red">CLASS | CAMPUS</div>
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-3 hidden-xxs text-center  no-left-padding "><img src="https://placeholdit.imgix.net/~text?txtsize=25&txt=MSAT&w=150&h=150" alt="BMW MSAT" class="img-circle " /></div>
+                      <div class="col-md-9 col-sm-9 col-xs-9">You'll learn how to diagnose, maintain and repair domestic and foreign automobiles. You will also find out how to troubleshoot problems of all kinds, using the latest problems of all kinds, using the latest</div>
+                    
+
+              </div>
+               <!-- slide -->
+              <div> 
+
+                      <div class="col-md-12 no-left-padding">
+                        <h5 class="title">Rick Roll III</h5>
+                        <div class="sub-title text-red">CLASS | CAMPUS</div>
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-3 hidden-xxs text-center  no-left-padding "><img src="https://placeholdit.imgix.net/~text?txtsize=25&txt=MSAT+2&w=150&h=150" alt="BMW MSAT" class="img-circle " /></div>
+                      <div class="col-md-9 col-sm-9 col-xs-9">You'll learn how to diagnose, maintain and repair domestic and foreign automobiles. You will also find out how to troubleshoot problems of all kinds, using the latest problems of all kinds, using the latest</div>
+                    
+
+              </div>
+               <!-- slide -->
+              <div> 
+
+                      <div class="col-md-12 no-left-padding">
+                        <h5 class="title">Rick Roll III</h5>
+                        <div class="sub-title text-red">CLASS | CAMPUS</div>
+                      </div>
+                      <div class="col-md-3 col-sm-3 col-xs-3 hidden-xxs text-center  no-left-padding "><img src="https://placeholdit.imgix.net/~text?txtsize=25&txt=MSAT+3&w=150&h=150" alt="BMW MSAT" class="img-circle " /></div>
+                      <div class="col-md-9 col-sm-9 col-xs-9">You'll learn how to diagnose, maintain and repair domestic and foreign automobiles. You will also find out how to troubleshoot problems of all kinds, using the latest problems of all kinds, using the latest</div>
+                    
+
+              </div>
+              
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Resources -->
+  <section class="inner-top-xs inner-bottom-xs outer-bottom-sm">
+    <div class="container-fluid ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-red">RESOURCES</h2>
+          </div>
+          <a href="#" data-toggle="modal" data-target="#finAidModal">
+          <div class="col-md-6 col-sm-6 navy-bg text-center inner-xs border plus-top-right"> <i class="fa fa-wrench fa-4x" aria-hidden="true"></i> <br />
+            FINANCIAL AID </div>
+          </a> <a href="#" data-toggle="modal" data-target="#finAidModal">
+          <div class="col-md-6 col-sm-6 navy-bg text-center inner-xs border plus-top-right"> <i class="fa fa-wrench fa-4x" aria-hidden="true"></i> <br />
+            SCHOLARSHIPS </div>
+          </a> <a href="#" data-toggle="modal" data-target="#finAidModal">
+          <div class="col-md-6 col-sm-6 navy-bg text-center inner-xs border plus-top-right"> <i class="fa fa-wrench fa-4x" aria-hidden="true"></i> <br />
+            HOUSING </div>
+          </a> <a href="#" data-toggle="modal" data-target="#finAidModal">
+          <div class="col-md-6 col-sm-6 navy-bg text-center inner-xs border plus-top-right"> <i class="fa fa-wrench fa-4x" aria-hidden="true"></i> <br />
+            DOWNLOADS </div>
+          </a> </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="finAidModal" tabindex="-1" role="dialog" aria-labelledby="finAidModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content blue-bg">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <div class="text-center"><i class="fa fa-wrench fa-6x" aria-hidden="true"></i> </div>
+        </div>
+        <div class="modal-body ">
+          <h4>Resources Modal</h4>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non pharetra quam. Phasellus rhoncus nunc et rutrum facilisis. Sed vel sem a sapien semper suscipit at consequat arcu. Ut ut dui eu ante lobortis ultrices sit amet non nulla. Integer turpis dui, viverra non elit ut, convallis porta massa. Suspendisse at placerat leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit aliquam nulla, fringilla tempor dolor vestibulum sed. Aenean suscipit auctor odio eget tristique. Nulla ornare sagittis pretium. In vel arcu blandit, consequat nisi eget, rutrum tellus. Phasellus in ultrices dui. Sed euismod velit eget imperdiet pulvinar. Suspendisse vitae ipsum tempus, rhoncus augue ut, cursus lectus. </div>
+        <div class="modal-footer"> </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        </div>
+        <div class="modal-body"> ... </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+    <!-- Related Programs-->
+  <section class="inner-bottom-xs inner-top-xs light-bg">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-red">RELATED PROGRAMS</h1>
+            <div id="related-programs" class="royalSlider rsDefaultInv outer-bottom-sm">
+
+  <div class="rsContent slide1">
+       <a class="rsImg img-responsive" href="assets/img/boston.jpg">Norwood</a>
+    <div class="bContainer text-center">
+
+      <strong class="rsABlock txtCent blockHeadline">Diesel Technician</strong>
+      <a href="#" class="btn btn-trans">LEARN MORE</a>
+      <span class="rsABlock txtCent" data-move-effect="none"></span>
+    </div>
+  </div>
+  
+  
+  <div class="rsContent slide1">
+       <a class="rsImg img-responsive" href="assets/img/avondale.jpg">Avondale</a>
+    <div class="bContainer text-center">
+
+      <strong class="rsABlock txtCent blockHeadline">Auto Technician</strong>
+      <a href="#" class="btn btn-trans">LEARN MORE</a>
+      <span class="rsABlock txtCent" data-move-effect="none"></span>
+    </div>
+  </div>
+
+</div>
+  </div>
+ </div>
+          </div>
+        </div>
+  </section>
+  
+  
+  
+  
+  <footer>
+    <div class="footer-bottom">
+      <div class="container inner">
+        <ul class="footer-menu text-center">
+          <div class="text-center" data-sf-element="Row">
+            <div id="Footer_T5E07B4B0009_Col00" class="sf_colsIn col-md-12" data-sf-element="Column 1" data-placeholder-label="The Footer">
+              <div id="Footer_T5E07B4B0011_Col00" class="sf_colsIn container text-center" data-sf-element="Container">
+                <div class="sfContentBlock">
+                  <ul class="text-center">
+                    <li><a href="http://www.uti.edu/about-uti">About UTI</a></li>
+                    <li><a href="/contact-us">Contact Us</a></li>
+                    <li><a href="/disclosure">Disclosure</a></li>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/legal-notice">Legal Notice</a></li>
+                    <li><a href="/people-services">Careers @ UTI</a></li>
+                    <li><a href="http://uti.investorroom.com" target="_blank">Investors</a></li>
+                    <li><a href="http://uti.mediaroom.com/" target="_blank">News Room</a></li>
+                    <li><a href="http://utifoundation.net/" target="_blank">UTI Foundation</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ul>
+        <!-- .footer-menu -->
+        <p class="text-center inner-top-sm"> </p>
+        <div class="sfContentBlock">
+          <p class="text-center">© 1999 - 2016 UTI. All Rights Reserved.</p>
+        </div>
+        <div class="disclaimer">Approximately 9,200 of the 9,900 UTI graduates in 2014 were available for employment. At the time of reporting, approximately 8,100 were employed within one year of their graduation date, for a total of 88%. Per UTI's accreditor's reporting standards, this rate excludes graduates in the following classifications: continuing education, active military service deployment, a health condition that prevents employment, incarceration, international students who have returned to their country of origin, or death. This rate includes graduates employed in positions that were obtained before or during their UTI education, where the primary job duties after graduation align with the educational and training objectives of the program. UTI cannot guarantee employment or salary. UTI graduates' achievements may vary. UTI programs prepare graduates for careers in industries using the provided training, primarily as automotive, diesel, collision repair, motorcycle and marine technicians. Some UTI graduates get jobs within their field of study in positions other than as a technician, such as: parts associate, service writer, fabricator, paint and paint prep, and shop owner/operator. Some programs may require longer than one year to complete. Program start dates vary by campus. Not all programs are NATEF accredited. Financial aid and scholarships are available to those who qualify. Awards vary due to specific conditions, criteria and state. For information about our graduation rates, the median debt of students who completed the program and other important information, visit our <a href="/disclosure">disclosure page</a>.&nbsp; </div>
+        <p></p>
+      </div>
+      <!-- .container --></div>
+    <!-- .footer-bottom --> 
+  </footer>
+</main>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+<script src="http://stage.uti.edu/content/uticorporate/js/uti1.min.js?v=8.2.5914.17323"></script> 
+<script src="http://stage.uti.edu/content/uticorporate/js/mega-menu/off-canvas.min.js?v=8.2.5914.17323"></script> 
+<script src="assets/royalslider/jquery.royalslider.min.js"></script> 
+<script src="http://stage.uti.edu/content/uticorporate/js/bootstrap.min.js"></script> 
+<script>
+var titles = {
+    collapseOne: "title for section 1",
+    collapseTwo: "title for section 2",
+};
+function getCurrentTitle(){
+    var selectedID = $(".panel-collapse.collapse.in")[0].id;
+    $("#current").html(titles[selectedID]);
+}
+
+
+
+
+
+
+
+/*UTI SLIDER*/
+jQuery(document).ready(function($) {
+	
+
+
+
+
+  // Please note that autoHeight option has some conflicts with options like imageScaleMode, imageAlignCenter and autoScaleSlider
+  // it's recommended to disable them when using autoHeight module
+  $('#content-slider-1, #content-slider-meet-our-instructors').royalSlider({
+    autoHeight: true,
+    arrowsNav: false,
+    fadeinLoadedSlide: false,
+    controlNavigationSpacing: 0,
+    controlNavigation: 'bullets',
+    imageScaleMode: 'none',
+    imageAlignCenter:false,
+    loop: false,
+    loopRewind: true,
+    numImagesToPreload: 6,
+    keyboardNavEnabled: true,
+    usePreloader: false
+  });
+  
+
+ jQuery(document).ready(function($) {
+  jQuery.rsCSS3Easing.easeOutBack = 'cubic-bezier(0.175, 0.885, 0.320, 1.275)';
+  $('#related-programs').royalSlider({
+	  autoHeight: true,
+    arrowsNav: true,
+    arrowsNavAutoHide: false,
+    fadeinLoadedSlide: false,
+    controlNavigationSpacing: 0,
+    controlNavigation: 'bullets',
+    imageScaleMode: 'none',
+    imageAlignCenter:false,
+    blockLoop: true,
+    loop: true,
+    numImagesToPreload: 6,
+    transitionType: 'fade',
+    keyboardNavEnabled: true,
+    block: {
+      delay: 400
+    }
+  });
+});
+
+
+
+
+  
+ //Affix cta bar
+   $('#cta-bar').affix({
+    offset: {
+        top: $('#ctaBar').offset().top-190,
+		  bottom: $('.footer-bottom').height()
+           }
+});
+
+//reconfigure affix on screen resize
+$(window).smartresize(function (e) {
+		$('#cta-bar').data('bs.affix').options.offset = $('#cta-bar').offset().top;
+		$('#cta-bar').data('bs.affix').options.offset = $('footer').height();		
+    })
+});
+</script>
+</body>
+</html>
